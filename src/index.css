@@ -38,3 +38,22 @@ ul.nav.navbar-nav li{
   background-image: linear-gradient(to right, #2c81b3, #00bf72);
   background-size: 100% 100%;
 }
+.home-hero{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(./images/warbler-hero.jpg);
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  text-shadow: 0 0 8px #66757f;
+}
