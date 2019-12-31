@@ -26,13 +26,16 @@ export default class AuthForm extends Component{
 
     render(){
         const { email, username, password, profileImageUrl } = this.state;
-        const { heading, buttonText, signUp } = this.props;
+        const { heading, buttonText, signUp, errors } = this.props;
         return (
             <div>
                 <div className="row justify-content-center">
                     <div className="col-md-5">
                         <form onSubmit={this.handleSubmit}>
                             <h4 className="text-center">{heading}</h4>
+                            {errors.message && (
+                                <div className="alert alert-danger">{errors.message}</div>
+                            )}
                             <div className="form-group">
                                 <label htmlFor="email">Email:</label>
                                 <input
