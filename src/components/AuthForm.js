@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class AuthForm extends Component{
     constructor(props){
@@ -15,15 +16,23 @@ export default class AuthForm extends Component{
         this.setState({[e.target.name]: e.target.value});
     }
 
+    handleSubmit = e => {
+        e.preventDefault();
+        const authType = this.props.signUp ? 'signup' : 'signin';
+        this.props.onAuth(authType, this.state).then(() => {
+            console.log('LOGGED IN SUCCESSFULLY');
+        });
+    }
+
     render(){
         const { email, username, password, profileImageUrl } = this.state;
         const { heading, buttonText, signUp } = this.props;
         return (
             <div>
-                <div className="row justify-content-center text-center">
+                <div className="row justify-content-center">
                     <div className="col-md-5">
                         <form onSubmit={this.handleSubmit}>
-                            <h2>{heading}</h2>
+                            <h4 className="text-center">{heading}</h4>
                             <div className="form-group">
                                 <label htmlFor="email">Email:</label>
                                 <input
@@ -33,17 +42,6 @@ export default class AuthForm extends Component{
                                     name="email"
                                     onChange={this.handleChange}
                                     value={email}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password">Password:</label>
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    id="password"
-                                    name="password"
-                                    onChange={this.handleChange}
-                                    value={password}
                                 />
                             </div>
                             {signUp && (
@@ -72,6 +70,21 @@ export default class AuthForm extends Component{
                                     </div>
                                 </div>
                             )}
+                            <div className="form-group">
+                                <label htmlFor="password">Password:</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    name="password"
+                                    onChange={this.handleChange}
+                                    value={password}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <button type="submit" className="btn btn-primary float-left">{buttonText}</button>
+                                <Link className="float-right" to={signUp ? "/signin" : "/signup"}>{signUp ? "I already have an account?" : "I dont't have an account?"}</Link>
+                            </div>
                         </form>
                     </div>
                 </div>
