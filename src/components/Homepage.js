@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Homepage = currentUser => {
-    if(!currentUser){
+const Homepage = ({currentUser}) => {
+    if(!currentUser.isAuthenticated){
         return (
             <div className="home-hero">
                 <h1>What's Happening?</h1>
