@@ -11,7 +11,7 @@ export function loadMessages(messages){
 
 export function getMessages(){
     return dispatch => {
-        apiCall("post", "/api/messages").then(messages => {
+        apiCall("get", "/api/messages").then(messages => {
             dispatch(loadMessages(messages));
         }).catch(err => dispatch(addError(err.message)));
     }
