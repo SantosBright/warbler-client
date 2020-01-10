@@ -8,6 +8,7 @@ class Navbar extends Component{
     logout = e => {
         e.preventDefault();
         this.props.logout();
+        this.props.history.push('/');
     }
 
     render(){
@@ -23,7 +24,7 @@ class Navbar extends Component{
                                 <NavLink to={`/users/${this.props.currentUser.user.id}/messages/new`}>New Message</NavLink>
                             </li>
                             <li>
-                                <a href="#" onClick={this.logout}>Log out</a>
+                                <a href="/#" onClick={this.logout}>Log out</a>
                             </li>
                         </ul>
                     ) : (
