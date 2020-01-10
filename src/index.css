@@ -59,7 +59,7 @@ ul.nav.navbar-nav li{
 }
 
 /* messsages */
-#messages .list-group{
+#messages .list-group-item{
   display: flex;
   align-items: flex-start;
   padding: 7px 20px 12px;

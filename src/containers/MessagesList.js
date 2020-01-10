@@ -1,4 +1,4 @@
-import React, { component, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMessages } from '../store/actions/messages';
 import MessageItem from '../components/MessageItem.js';
@@ -12,11 +12,11 @@ class MessageList extends Component{
         const { messages } = this.props;
         let messageList = messages.map(m => (
             <MessageItem
-                key={m.id}
+                key={m._id}
                 date={m.createAt}
                 text={m.text}
                 username={m.user.username}
-                profileImageUrl={m.user.profileImageUrl}
+                profileImageUrl={m.user.profileImgUrl}
             />
         ));
 
