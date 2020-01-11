@@ -26,7 +26,7 @@ export default class AuthForm extends Component{
     }
 
     render(){
-        const { email, username, password, profileImageUrl } = this.state;
+        const { email, username, password, profileImgUrl } = this.state;
         const { heading, buttonText, signUp, errors, history, removeError } = this.props;
 
         history.listen(() => {
@@ -66,14 +66,14 @@ export default class AuthForm extends Component{
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="profileImageUrl">ProfileImageUrl:</label>
+                                        <label htmlFor="profileImgUrl">ProfileImageUrl:</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="profileImageUrl"
-                                            name="profileImageUrl"
+                                            id="profileImgUrl"
+                                            name="profileImgUrl"
                                             onChange={this.handleChange}
-                                            value={profileImageUrl}
+                                            value={profileImgUrl}
                                         />
                                     </div>
                                 </div>
