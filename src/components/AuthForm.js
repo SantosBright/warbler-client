@@ -8,7 +8,7 @@ export default class AuthForm extends Component{
             email: '',
             username: '',
             password: '',
-            profileImageUrl: ''
+            profileImgUrl: ''
         };
     }
 

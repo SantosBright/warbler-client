@@ -67,3 +67,13 @@ ul.nav.navbar-nav li{
 /* #messages:not(.no-hover) .list-group-item:hover{
   background-color: #e6ecf0;
 } */
+
+.timeline-image{
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  margin: 2px 30px 10px 10px;
+}
+.btn:hover{
+  cursor: pointer;
+}
