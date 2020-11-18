@@ -1,6 +1,6 @@
 # Warbler React Client
 
-Warbler Client in react from Colt Steele advance web developer bootcamp
+Warbler Client in react to consume the warbler api
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
